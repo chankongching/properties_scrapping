@@ -15,7 +15,10 @@ var casper = require('casper').create({
     },
     verbose: true
 });
+// Setting user agents
 casper.userAgent('Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19');
+// Setting browser size
+casper.options.viewportSize = {width: 1600, height: 950};
 
 phantom.outputEncoding = "utf-8"; //解决中文乱码
 
