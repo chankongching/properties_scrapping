@@ -6,7 +6,7 @@ var casper = require('casper').create({
         self.exit();
     },
     clientScripts:  [
-        "../includes/jquery-3.5.0.min.js",      // 这两个脚本将在访问远程URL的时候被载入
+        "../includes/jquery.js",      // 这两个脚本将在访问远程URL的时候被载入
         "../includes/underscore.js"   // DOM on every request
     ],
     pageSettings: {
@@ -31,6 +31,6 @@ casper.start(url, function() {
 });
 
 casper.then(function() {
-   this.capture('hsbc-select-zone-results');
+   this.capture('hsbc-select-zone-results.png');
 });
 casper.run();
