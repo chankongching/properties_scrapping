@@ -31,14 +31,19 @@ casper.start(url, function() {
 });
 
 casper.then(function() {
-    var text = this.evaluate(function(){
-        return document.querySelector("select#tools_form_1").textContent;
+    // var text = this.evaluate(function(){
+    //     return document.querySelector("select#tools_form_1").textContent;
+    // });
+    //
+    // var word = require('utils').dump(text);
+    // console.log(word);
+    var html = this.evaluate(function() {
+      return document.querySelector("html").outerHTML;
     });
-
-    var word = require('utils').dump(text);
-    console.log(word);
+    $("select#tools_form_1").each(function(){
+      console.log($(this).html())
+    });
 });
-
 
 casper.then(function() {
    this.capture('hsbc-select-zone-results.png');
