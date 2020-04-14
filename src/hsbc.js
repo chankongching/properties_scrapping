@@ -34,8 +34,8 @@ casper.then(function() {
     var element = this.evaluate(function() {
         return __utils__.findOne('#tools_form_1');
     });
-    this.echo(element.innerText);
-    this.echo(element.html());
+    this.echo(element.outerText);
+    // this.echo(element.html());
     this.findOne('option').val('3').change();
 });
 
