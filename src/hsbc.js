@@ -37,27 +37,9 @@ casper.then(function() {
 
     var word = require('utils').dump(text);
     console.log(word);
-)}
-
-casper.then(function() {
-// console.log($('#tools_form_1').html());
-  this.echo(this.getTitle());
-
-  // var text = this.evaluate(function(){
-  //     return document.querySelector('select[id="tools_form_1"]').html();
-  // });
-  // console.log(text)
-  // this.echo(this.html());
-  // // this.echo(this.getElementById('tools_form_1').html());
-  // $(this).find('select').each(function(){
-  //   console.log($(this).html())
-  // })
-  // this.echo($('select.tools_form_1').html());
-//  //填入form
-//  this.evaluate(function() {
-//    $('#zone').val('3').change();
-//  });
 });
+
+
 casper.then(function() {
    this.capture('hsbc-select-zone-results.png');
 });
