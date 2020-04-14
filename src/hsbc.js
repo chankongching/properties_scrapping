@@ -37,7 +37,7 @@ casper.then(function() {
 
     var word = require('utils').dump(text);
     console.log(word);
-}
+)}
 
 casper.then(function() {
 // console.log($('#tools_form_1').html());
