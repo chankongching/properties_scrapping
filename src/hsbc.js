@@ -28,12 +28,14 @@ casper.start(url, function() {
   this.echo(this.getTitle());
   this.echo(this.getCurrentUrl());
   this.wait(500);//确保网页加载成功吧
-  //填入form
-  this.evaluate(function() {
-      $('#zone').val('3').change();
-  });
 });
 
+casper.then(function() {
+ //填入form
+ this.evaluate(function() {
+     $('#zone').val('3').change();
+ });
+});
 casper.then(function() {
    this.capture('hsbc-select-zone-results.png');
 });
