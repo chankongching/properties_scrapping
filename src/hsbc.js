@@ -47,6 +47,21 @@ casper.start(url, function() {
 //     //   console.log($(this).html())
 //     // });
 // });
+casper.then(function(){
+  casper.wait(5000, function() {
+    // Get HTML
+    var html = this.evaluate(function() {
+      return document.querySelector("html").outerHTML;
+    });
+    var $ = require('jquery')
+    $("body").append(html);
+
+    // Start doing stuff
+    $(this).find('div').each(function(){
+      console.log($(this).text());
+    });
+  });
+});
 
 casper.then(function() {
    this.capture('hsbc-select-zone-results.png');
