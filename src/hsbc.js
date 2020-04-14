@@ -40,9 +40,10 @@ casper.then(function() {
     var html = this.evaluate(function() {
       return document.querySelector("html").outerHTML;
     });
-    $("select").each(function(){
-      console.log($(this).html())
-    });
+    console.log($(this).find('select#selectize-control').html())
+    // $("select").each(function(){
+    //   console.log($(this).html())
+    // });
 });
 
 casper.then(function() {
