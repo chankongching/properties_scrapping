@@ -33,7 +33,8 @@ casper.start(url, function() {
 casper.then(function() {
  //填入form
  this.evaluate(function() {
-     $('#zone').val('3').change();
+   console.log($('#zone').text());
+   $('#zone').val('3').change();
  });
 });
 casper.then(function() {
