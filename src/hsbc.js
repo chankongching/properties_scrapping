@@ -33,11 +33,15 @@ casper.start(url, function() {
 casper.then(function() {
 // console.log($('#tools_form_1').html());
   this.echo(this.getTitle());
-  this.echo(this.html());
-  // this.echo(this.getElementById('tools_form_1').html());
-  $(this).find('select').each(function(){
-    console.log($(this).html())
-  })
+  var text = this.evaluate(function(){
+      return document.querySelector("select.tools_form_1").textContent;
+  });
+  console.log(text)
+  // this.echo(this.html());
+  // // this.echo(this.getElementById('tools_form_1').html());
+  // $(this).find('select').each(function(){
+  //   console.log($(this).html())
+  // })
   // this.echo($('select.tools_form_1').html());
 //  //填入form
 //  this.evaluate(function() {
