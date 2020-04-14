@@ -31,11 +31,13 @@ casper.start(url, function() {
 });
 
 casper.then(function() {
-    var text = this.evaluate(function() {
-        return __utils__.findOne('#tools_form_1').innerText;
+    var text = this.evaluate(function(){
+        return document.querySelector("select#tools_form_1").textContent;
     });
-    this.echo(text);
-});
+
+    var word = require('utils').dump(text);
+    console.log(word);
+}
 
 casper.then(function() {
 // console.log($('#tools_form_1').html());
