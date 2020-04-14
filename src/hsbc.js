@@ -31,14 +31,17 @@ casper.start(url, function() {
 });
 
 casper.then(function() {
+    var element = this.evaluate(function() {
+        return __utils__.findOne('#tools_form_1');
+    });
+    this.echo(element.innerText);
+    this.findOne('option').val('3').change();
+});
+
+casper.then(function() {
 // console.log($('#tools_form_1').html());
   this.echo(this.getTitle());
-  casper.then(function() {
-      var text = this.evaluate(function() {
-          return __utils__.findOne('.form-control-initialized').innerText;
-      });
-      this.echo(text);
-  });
+
   // var text = this.evaluate(function(){
   //     return document.querySelector('select[id="tools_form_1"]').html();
   // });
