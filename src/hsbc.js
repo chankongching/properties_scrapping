@@ -34,6 +34,8 @@ casper.then(function() {
  //填入form
  this.evaluate(function() {
    console.log($('#tools_form_1').html());
+   this.echo(this.getTitle());
+   this.echo($('#tools_form_1').html());
    $('#zone').val('3').change();
  });
 });
