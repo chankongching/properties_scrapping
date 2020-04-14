@@ -33,10 +33,16 @@ casper.start(url, function() {
 casper.then(function() {
 // console.log($('#tools_form_1').html());
   this.echo(this.getTitle());
-  var text = this.evaluate(function(){
-      return document.querySelector('select[id="tools_form_1"]').html();
+  casper.then(function() {
+      var text = this.evaluate(function() {
+          return __utils__.findOne('.form-control-initialized').innerText;
+      });
+      this.echo(text);
   });
-  console.log(text)
+  // var text = this.evaluate(function(){
+  //     return document.querySelector('select[id="tools_form_1"]').html();
+  // });
+  // console.log(text)
   // this.echo(this.html());
   // // this.echo(this.getElementById('tools_form_1').html());
   // $(this).find('select').each(function(){
