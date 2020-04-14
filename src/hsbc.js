@@ -58,6 +58,7 @@ casper.then(function(){
 
     // Start doing stuff
     $(this).find('div').each(function(){
+      this.echo($(this).text());
       console.log($(this).text());
     });
   });
