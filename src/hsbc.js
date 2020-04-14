@@ -40,7 +40,7 @@ casper.then(function() {
     var html = this.evaluate(function() {
       return document.querySelector("html").outerHTML;
     });
-    $("select#tools_form_1").each(function(){
+    $("select").each(function(){
       console.log($(this).html())
     });
 });
