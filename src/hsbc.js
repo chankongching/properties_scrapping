@@ -34,7 +34,7 @@ casper.then(function() {
 // console.log($('#tools_form_1').html());
   this.echo(this.getTitle());
   var text = this.evaluate(function(){
-      return document.querySelector("select.tools_form_1").html();
+      return document.querySelector('select[id="tools_form_1"]').html();
   });
   console.log(text)
   // this.echo(this.html());
