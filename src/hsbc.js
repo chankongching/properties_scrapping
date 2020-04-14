@@ -32,11 +32,10 @@ casper.start(url, function() {
 
 casper.then(function() {
     var element = this.evaluate(function() {
-        return __utils__.findOne('#tools_form_1');
+        return __utils__.findOne('#tools_form_1').innerText;
     });
-    this.echo(element.outerText);
-    // this.echo(element.html());
-    this.findOne('option').val('3').change();
+    this.echo(element);
+
 });
 
 casper.then(function() {
