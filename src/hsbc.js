@@ -31,11 +31,10 @@ casper.start(url, function() {
 });
 
 casper.then(function() {
-    var element = this.evaluate(function() {
+    var text = this.evaluate(function() {
         return __utils__.findOne('#tools_form_1').innerText;
     });
-    this.echo(element);
-
+    this.echo(text);
 });
 
 casper.then(function() {
