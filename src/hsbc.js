@@ -47,20 +47,35 @@ casper.start(url, function() {
 //     //   console.log($(this).html())
 //     // });
 // });
-casper.then(function(){
-  casper.wait(5000, function() {
-    // Get HTML
-    var html = this.evaluate(function() {
-      return document.querySelector("html").outerHTML;
-    });
-    var $ = require('jquery')
-    $("body").append(html);
+// casper.then(function(){
+//   casper.wait(5000, function() {
+//     // Get HTML
+//     var html = this.evaluate(function() {
+//       return document.querySelector("html").outerHTML;
+//     });
+//     var $ = require('jquery')
+//     $("body").append(html);
+//
+//     // Start doing stuff
+//     $(this).find('div').each(function(){
+//       this.echo($(this).text());
+//       console.log($(this).text());
+//     });
+//   });
+// });
 
-    // Start doing stuff
-    $(this).find('div').each(function(){
-      this.echo($(this).text());
-      console.log($(this).text());
-    });
+casper.then(function(){
+  // Get HTML
+  var html = this.evaluate(function() {
+    return document.querySelector("html").outerHTML;
+  });
+  var $ = require('jquery')
+  $("body").append(html);
+
+  // Start doing stuff
+  $(this).find('div').each(function(){
+    this.echo($(this).text());
+    console.log($(this).text());
   });
 });
 
