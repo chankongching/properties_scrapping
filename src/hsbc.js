@@ -30,22 +30,36 @@ casper.start(url, function() {
   this.wait(500);//确保网页加载成功吧
 });
 
+// casper.then(function() {
+//     // var text = this.evaluate(function(){
+//     //     return document.querySelector("select#tools_form_1").textContent;
+//     // });
+//     //
+//     // var word = require('utils').dump(text);
+//     // console.log(word);
+//     var html = this.evaluate(function() {
+//       return document.querySelector("html").outerHTML;
+//     });
+//     var $ = require('jquery')
+//     $("body").append(html);
+//     console.log($('select#selectize-control').html())
+//     // $("select").each(function(){
+//     //   console.log($(this).html())
+//     // });
+// });
+
 casper.then(function() {
-    // var text = this.evaluate(function(){
-    //     return document.querySelector("select#tools_form_1").textContent;
-    // });
-    //
-    // var word = require('utils').dump(text);
-    // console.log(word);
+  casper.wait(5000, function() {
+    // Get HTML
     var html = this.evaluate(function() {
       return document.querySelector("html").outerHTML;
     });
     var $ = require('jquery')
     $("body").append(html);
-    console.log($('select#selectize-control').html())
-    // $("select").each(function(){
-    //   console.log($(this).html())
-    // });
+    $("select#selectize-control").each(function(){
+      console.log($(this).html())
+    });
+  });
 });
 
 casper.then(function() {
