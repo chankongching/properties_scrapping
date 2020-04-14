@@ -49,20 +49,6 @@ casper.start(url, function() {
 // });
 
 casper.then(function() {
-  casper.wait(5000, function() {
-    // Get HTML
-    var html = this.evaluate(function() {
-      return document.querySelector("html").outerHTML;
-    });
-    var $ = require('jquery')
-    $("body").append(html);
-    $("select#selectize-control").each(function(){
-      console.log($(this).html())
-    });
-  });
-});
-
-casper.then(function() {
    this.capture('hsbc-select-zone-results.png');
 });
 casper.run();
