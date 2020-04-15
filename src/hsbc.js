@@ -1,3 +1,5 @@
+var filename = 'hsbc.html'
+
 var casper = require('casper').create({
     // verbose: true,
     logLevel: 'info',
@@ -71,12 +73,15 @@ casper.then(function(){
   });
   var $ = require('jquery')
   $("body").append(html);
+  // Save HTML
+  fs = require('fs');
+  fs.write(filename, html, 'w');
 
-  // Start doing stuff
-  $(this).find('div').each(function(){
-    this.echo($(this).text());
-    console.log($(this).text());
-  });
+  // // Start doing stuff
+  // $(this).find('div').each(function(){
+  //   this.echo($(this).text());
+  //   console.log($(this).text());
+  // });
 });
 
 casper.then(function() {
