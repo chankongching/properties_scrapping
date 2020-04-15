@@ -76,6 +76,7 @@ casper.then(function(){
 
   $("div.fieldset").each(function(){
     console.log($(this).text())
+    console.log($(this).html())
     // this.mouse.click('div[aria-owns="tools_form_1_menu"]')
   });
 
