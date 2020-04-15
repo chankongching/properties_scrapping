@@ -67,29 +67,30 @@ casper.start(url, function() {
 // });
 
 casper.then(function(){
-  // Get HTML
-  var html = this.evaluate(function() {
-    return document.querySelector("html").outerHTML;
-  });
-  var $ = require('jquery')
-  $("body").append(html);
-
-  var count=0
-  $("div.selector").each(function(){
-    // console.log($(this).html())
-    switch(count){
-      case 0 :
-        console.log($(this).html());
-        // $('option').val(3).change();
-        // var divYZ = require('utils').dump(this.getElementBounds('selector'))
-        // var divYZ = this.getElementBounds();
-      //   var width = divYZ.width;
-      //   var height = divYZ.height;
-        this.click();
-      break;
-    }
-    count = count + 1;
-  });
+  this.clickLabel('區域');
+  // // Get HTML
+  // var html = this.evaluate(function() {
+  //   return document.querySelector("html").outerHTML;
+  // });
+  // var $ = require('jquery')
+  // $("body").append(html);
+  //
+  // var count=0
+  // $("div.selector").each(function(){
+  //   // console.log($(this).html())
+  //   switch(count){
+  //     case 0 :
+  //       console.log($(this).html());
+  //       // $('option').val(3).change();
+  //       // var divYZ = require('utils').dump(this.getElementBounds('selector'))
+  //       // var divYZ = this.getElementBounds();
+  //     //   var width = divYZ.width;
+  //     //   var height = divYZ.height;
+  //       this.click();
+  //     break;
+  //   }
+  //   count = count + 1;
+  // });
   // // Save HTML
   // fs = require('fs');
   // fs.write(filename, html, 'w');
