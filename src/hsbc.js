@@ -80,7 +80,8 @@ casper.then(function(){
         case 0 :
           console.log($(this).text())
           console.log($(this).html())
-          this.mouse.click('div.selector')
+          // this.mouse.click('div.selector')
+          this.mouseEvent('click', 'div.selectize-control');
         break;
       }
       count = count + 1;
