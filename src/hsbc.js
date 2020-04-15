@@ -67,6 +67,13 @@ casper.start(url, function() {
 // });
 
 casper.then(function(){
+  // Get HTML
+  var html = this.evaluate(function() {
+    return document.querySelector("html").outerHTML;
+  });
+  var $ = require('jquery')
+  $("body").append(html);
+  
   $("div.fieldset").each(function(){
     this.mouse.click('div[aria-owns="tools_form_1_menu"]')
   });
