@@ -67,7 +67,7 @@ casper.start(url, function() {
 // });
 
 casper.then(function(){
-  this.mouse.click('select[id="tools_form_9"]')
+  this.mouse.click('select[id="tools_form_1_selectized"]')
 })
 
 
