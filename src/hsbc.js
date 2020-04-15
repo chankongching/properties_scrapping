@@ -76,15 +76,16 @@ casper.then(function(){
 
   var count=0
   $("div.selector").each(function(){
-    console.log($(this).html())
+    // console.log($(this).html())
     switch(count){
       case 0 :
+        console.log($(this).html()
         // $('option').val(3).change();
         // var divYZ = require('utils').dump(this.getElementBounds('selector'))
         // var divYZ = this.getElementBounds();
       //   var width = divYZ.width;
       //   var height = divYZ.height;
-        this.click($(this));
+        this.click();
       break;
     }
     count = count + 1;
