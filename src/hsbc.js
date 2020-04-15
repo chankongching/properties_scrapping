@@ -73,9 +73,13 @@ casper.then(function(){
   });
   var $ = require('jquery')
   $("body").append(html);
-  // Save HTML
-  fs = require('fs');
-  fs.write(filename, html, 'w');
+
+  $("div.selector").each(function(){
+    console.log($(this).html())
+  });
+  // // Save HTML
+  // fs = require('fs');
+  // fs.write(filename, html, 'w');
 
   // // Start doing stuff
   // $(this).find('div').each(function(){
