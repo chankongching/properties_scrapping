@@ -80,8 +80,9 @@ casper.then(function(){
         case 0 :
           console.log($(this).text())
           console.log($(this).html())
+          this.mouse.click('div[role="listbox"]')
           // this.mouse.click('div.selector')
-          this.mouseEvent('click', '.selector');
+          // this.mouseEvent('click', '.selector');
         break;
       }
       count = count + 1;
