@@ -74,10 +74,16 @@ casper.then(function(){
   var $ = require('jquery')
   $("body").append(html);
 
+  var count=0
   $("div.fieldset").each(function(){
-    console.log($(this).text())
-    console.log($(this).html())
-    // this.mouse.click('div[aria-owns="tools_form_1_menu"]')
+      switch(count){
+        case 0 :
+          console.log($(this).text())
+          console.log($(this).html())
+          this.mouse.click('div[class="selector"]')
+        break;
+      }
+      count = count + 1;
   });
 
   // this.clickLabel('區域');
