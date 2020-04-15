@@ -68,7 +68,15 @@ casper.start(url, function() {
 
 casper.then(function(){
   this.mouse.click('select[id="tools_form_1_selectized"]');
+  console.log($('select[id="tools_form_1_selectized"]').html())
+
+  var html = this.evaluate(function() {
+    return document.querySelector("html").outerHTML;
+  });
+  var $ = require('jquery')
+  $("body").append(html);
   console.log($('select#tools_form_1_selectized').html())
+
 })
 
 
