@@ -79,7 +79,11 @@ casper.then(function(){
     console.log($(this).html())
     switch(count){
       case 0 :
-        $('option').val(3).change();
+        // $('option').val(3).change();
+        var divYZ = this.getElementBounds($(this));
+        var width = divYZ.width;
+        var height = divYZ.height;
+        this.click($(this)); 
       break;
     }
     count = count + 1;
