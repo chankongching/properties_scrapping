@@ -67,7 +67,10 @@ casper.start(url, function() {
 // });
 
 casper.then(function(){
-  this.mouse.click('div[aria-owns="tools_form_1_menu"]')
+  $("div.fieldset").each(function(){
+    this.mouse.click('div[aria-owns="tools_form_1_menu"]')
+  });
+
   // this.clickLabel('區域');
   // // Get HTML
   // var html = this.evaluate(function() {
