@@ -71,27 +71,27 @@ casper.then(function(){
 })
 
 
-casper.then(function(){
-  // Get HTML
-  var html = this.evaluate(function() {
-    return document.querySelector("html").outerHTML;
-  });
-  var $ = require('jquery')
-  $("body").append(html);
-
-  var count=0
-  $("div.fieldset").each(function(){
-      switch(count){
-        case 0 :
-          console.log($(this).text())
-          console.log($(this).html())
-          this.mouse.click('div[role="listbox"]')
-          // this.mouse.click('div.selector')
-          // this.mouseEvent('click', '.selector');
-        break;
-      }
-      count = count + 1;
-  });
+// casper.then(function(){
+//   // Get HTML
+//   var html = this.evaluate(function() {
+//     return document.querySelector("html").outerHTML;
+//   });
+//   var $ = require('jquery')
+//   $("body").append(html);
+//
+//   var count=0
+//   $("div.fieldset").each(function(){
+//       switch(count){
+//         case 0 :
+//           console.log($(this).text())
+//           console.log($(this).html())
+//           this.mouse.click('div[role="listbox"]')
+//           // this.mouse.click('div.selector')
+//           // this.mouseEvent('click', '.selector');
+//         break;
+//       }
+//       count = count + 1;
+//   });
 
   // this.clickLabel('區域');
   // // Get HTML
@@ -126,7 +126,7 @@ casper.then(function(){
   //   this.echo($(this).text());
   //   console.log($(this).text());
   // });
-});
+// });
 
 casper.then(function() {
    this.capture('hsbc-select-zone-results.png');
