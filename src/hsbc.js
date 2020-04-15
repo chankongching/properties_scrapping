@@ -80,7 +80,7 @@ casper.then(function(){
     switch(count){
       case 0 :
         // $('option').val(3).change();
-        var divYZ = this.getElementBounds($("select"));
+        var divYZ = this.getElementBounds();
         var width = divYZ.width;
         var height = divYZ.height;
         this.click($(this));
