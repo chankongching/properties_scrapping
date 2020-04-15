@@ -67,6 +67,11 @@ casper.start(url, function() {
 // });
 
 casper.then(function(){
+  this.mouse.click('div[aria-label="區域"]')
+})
+
+
+casper.then(function(){
   // Get HTML
   var html = this.evaluate(function() {
     return document.querySelector("html").outerHTML;
