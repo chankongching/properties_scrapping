@@ -74,8 +74,15 @@ casper.then(function(){
   var $ = require('jquery')
   $("body").append(html);
 
+  var count=0
   $("div.selector").each(function(){
     console.log($(this).html())
+    switch(count){
+      case 0 :
+        $('option').val(3).change();
+      break;
+    }
+    count = count + 1;
   });
   // // Save HTML
   // fs = require('fs');
